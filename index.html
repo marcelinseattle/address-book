@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="js/app.js">
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Address book</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Add a contact:</h2>
+        <form id="new-contact">
+          <div class="form-group">
+            <label for="new-first-name">First name</label>
+            <input type="text" class="form-control" id="new-first-name">
+          </div>
+          <div class="form-group">
+            <label for="new-last-name">Last name</label>
+            <input type="text" class="form-control" id="new-last-name">
+          </div>
+
+          <button type="submit" class="btn">Add</button>
+        </form>
+
+        <h2>Contacts:</h2>
+        <ul id="contacts">
+
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <div id="show-contact">
+          <h2></h2>
+
+          <p>First name: <span class="first-name"></span></p>
+          <p>Last name: <span class="last-name"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
