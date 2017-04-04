@@ -15,6 +15,17 @@ Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
 
+Address.prototype.fullAddress = function(){
+  return this.street + ", " + this.city + " " + this.state;
+}
+
+function resetFields() {
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input.new-street").val("");
+    $("input.new-city").val("");
+    $("input.new-state").val("");
+}
 
 // user interface logic
 $(document).ready(function() {
@@ -52,22 +63,17 @@ $(document).ready(function() {
       $(".last-name").text(newContact.lastName);
       $("ul#addresses").text("");
       newContact.addresses.forEach(function(address){
-        $("ul#addresses").append("<li>" + address.street + ", " + address.city + " " + address.state + "</li>");
+        $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
       });
     });
 
-    $(".new-address").each(function(){
-      var inputtedStreet = $(this).find("input.new-street").val();
-      var inpuutedCity = $(this).find("input.new-city").val();
-      var inputtedState = $(this).find("input.new-state").val();
-      var newAddress = new Address(inputtedStreet, inpuutedCity, inputtedState);
-      newContact.addresses.push(newAddress);
-    });
 
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input.new-street").val("");
-    $("input.new-city").val("");
-    $("input.new-state").val("");
+    var inputtedStreet = $("input.new-street").val();
+    var inpuutedCity = $("input.new-city").val();
+    var inputtedState = $("input.new-state").val();
+    var newAddress = new Address(inputtedStreet, inpuutedCity, inputtedState);
+    newContact.addresses.push(newAddress);
+
+    resetFields()
   });
 });
